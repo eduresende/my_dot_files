@@ -1,0 +1,12 @@
+[user]
+	name = Eduardo Resende Pereira
+	email = ed.resende@gmail.com
+[color]
+	ui = true
+[format]
+	pretty = oneline
+[core]
+	editor = vim
+[gui]
+	recentrepo = /home/eduardo/code/lpj/convite-textos
+	fontui = -family cmex10 -size 10 -weight bold -slant roman -underline 0 -overstrike 0
