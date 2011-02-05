@@ -44,8 +44,7 @@ elseif has("unix")
 endif
 
 if has("gui_running")
-  colorscheme adaryn
-  syntax on
+  colorscheme githubedu
 endif
 
 set guioptions-=T
@@ -67,6 +66,11 @@ set smarttab      " insert tabs on the start of a line according to shiftwidth, 
 
 " Retirando espaços no fim das linhas ao salvar o arquivo
 autocmd BufWritePre * :%s/\s\+$//e
+
+" Folding
+" set foldmethod=indent
+" nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
+" :set fdl=1
 
 " =================================================================================================
 " Searching =======================================================================================
