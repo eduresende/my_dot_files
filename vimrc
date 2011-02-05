@@ -44,7 +44,7 @@ elseif has("unix")
 endif
 
 if has("gui_running")
-  colorscheme githubedu
+  colorscheme github
 endif
 
 set guioptions-=T
@@ -114,14 +114,14 @@ nmap <silent> :e :tabe
 " =================================================================================================
 
 " CommandT
-" nmap <silent> <C-t> :CommandTFlush<CR>:CommandT<CR>
+nmap <silent> <C-t> :CommandTFlush<CR>:CommandT<CR>
 
 " Project
 " nmap <silent> <C-p> :Project<CR>
 
 " NERDTree
-" nmap <silent> <F4> :NERDTreeToggle <CR>
-" imap <silent> <F4> :NERDTreeToggle <CR>
+nmap <silent> <F4> :NERDTreeToggle <CR>
+imap <silent> <F4> :NERDTreeToggle <CR>
 
 " Syntastic
 " set statusline+=%{SyntasticStatuslineFlag()}
