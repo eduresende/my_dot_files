@@ -15,19 +15,23 @@ set noswapfile
 let mapleader=","
 set history=1000         " remember more commands and search history
 set undolevels=1000      " use many muchos levels of undo
-set wildignore=*.swp,*.bak,*.pyc,*.class
+set wildmode=list:longest,list:full
+set wildignore=*.o,*.obj,.git,*.rbc,*.swp,*.bak,*.pyc,*.class
+set encoding=utf-8
 
 " =================================================================================================
 " Appearence ======================================================================================
 " =================================================================================================
 
 set number        " always show line numbers
+set ruler
 set noshowmatch   " set show matching parenthesis
 set title                " change the terminal's title
 set novisualbell           " don't beep
 set noerrorbells         " don't beep
 set list
 set listchars=tab:>-,trail:- " show tabs and trailing
+set laststatus=2
 
 " Set font according to system
 if has("mac")
@@ -56,7 +60,10 @@ set guioptions-=T
 
 set nowrap        " don't wrap lines
 set tabstop=2     " a tab is four spaces
-set ts=2 sts=2 sw=2 expandtab
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set expandtab
 set backspace=indent,eol,start " allow backspacinsv over everything in insert mode
 set autoindent    " always set autoindenting on
 set copyindent    " copy the previous indentation on autoindenting
@@ -87,6 +94,15 @@ set incsearch     " show search matches as you type
 
 filetype plugin indent on
 syntax on
+
+au FileType make set noexpandtab
+au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru}    set ft=ruby
+au BufRead,BufNewFile *.txt call s:setupWrapping()
+au FileType python  set tabstop=4 textwidth=79
+set backspace=indent,eol,start
+map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
+
+
 
 " =================================================================================================
 " Unclear =========================================================================================
@@ -128,6 +144,8 @@ imap <silent> <leader>n :NERDTreeToggle <CR>
 " Syntastic
 " set statusline+=%{SyntasticStatuslineFlag()}
 " let g:syntastic_enable_signs=1
+let g:syntastic_enable_signs=1
+let g:syntastic_quiet_warnings=1
 
 " =================================================================================================
 " Quickly edit/reload the vimrc file ==============================================================
