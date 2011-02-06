@@ -114,14 +114,16 @@ nmap <silent> :e :tabe
 " =================================================================================================
 
 " CommandT
-nmap <silent> <C-t> :CommandTFlush<CR>:CommandT<CR>
+nmap <silent> <leader>t :CommandTFlush<CR>:CommandT<CR>
 
 " Project
 " nmap <silent> <C-p> :Project<CR>
 
 " NERDTree
-nmap <silent> <F4> :NERDTreeToggle <CR>
-imap <silent> <F4> :NERDTreeToggle <CR>
+" nmap <silent> <F4> :NERDTreeToggle <CR>
+" imap <silent> <F4> :NERDTreeToggle <CR>
+nmap <silent> <leader>n :NERDTreeToggle <CR>
+imap <silent> <leader>n :NERDTreeToggle <CR>
 
 " Syntastic
 " set statusline+=%{SyntasticStatuslineFlag()}
