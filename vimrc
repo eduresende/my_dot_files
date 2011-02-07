@@ -32,6 +32,7 @@ set noerrorbells         " don't beep
 set list
 set listchars=tab:>-,trail:- " show tabs and trailing
 set laststatus=2
+set cursorline
 
 " Set font according to system
 if has("mac")
@@ -40,11 +41,9 @@ if has("mac")
   set nocursorline
 elseif has("win32")
   set gfn=Bitstream\ Vera\ Sans\ Mono:h10
-  set nocursorline
 elseif has("unix")
   set gfn=Monospace\ 11
 "  set shell=/bin/bash
-  set nocursorline
 endif
 
 if has("gui_running")
@@ -125,12 +124,15 @@ nmap <silent> <C-a> :bdelete<CR>
 
 nmap <silent> :e :tabe
 
+nmap <silent> <F5> :!ruby %<CR>
+imap <silent> <esc><F5> :!ruby %<CR>
+
 " =================================================================================================
 " Plugins config and shortcuts ====================================================================
 " =================================================================================================
 
 " CommandT
-nmap <silent> <leader>t :CommandTFlush<CR>:CommandT<CR>
+nmap <silent> <C-t> :CommandTFlush<CR>:CommandT<CR>
 
 " Project
 " nmap <silent> <C-p> :Project<CR>
