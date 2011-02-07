@@ -1,8 +1,11 @@
 cd
+mkdir .old_dot_files
+mv .autotest .bashrc .gemrc .gitconfig .vim .vimrc .bin .themes .old_dot_files/
 ln -s .my_dot_files/autotest .autotest
-ln -s .my_dot_files/bash_history .bash_history
 ln -s .my_dot_files/bashrc .bashrc
 ln -s .my_dot_files/gemrc .gemrc
 ln -s .my_dot_files/gitconfig .gitconfig
 ln -s .my_dot_files/vim .vim
 ln -s .my_dot_files/vimrc .vimrc
+ln -s .my_dot_files/bin .bin
+ln -s .my_dot_files/themes .themes

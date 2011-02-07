@@ -1,0 +1,15 @@
+
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=Victory
+Comment=Victory (Strikes Again) based on, and with elements from, Ambiance, New Wave, and elementary-mod (elementary)
+Encoding=UTF-8
+
+Name[en_US]=Victory
+
+[X-GNOME-Metatheme]
+GtkTheme=Victory
+MetacityTheme=Victory
+IconTheme=elementary-monochrome
+CursorTheme=DMZ-White
+ButtonLayout=:minimize,maximize,close

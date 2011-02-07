@@ -1,0 +1,280 @@
+# Theme Name  : Aurora-Australis
+# Author      : Erik Xian <erikxian@gmail.com>
+# Description : A slimmed down version of Aurora Borealis.
+
+#gtk_color_scheme = "fg_color:#000\nbg_color:#eaedf2\nbase_color:#fff\ntext_color:#000\nselected_bg_color:#355888\nselected_fg_color:#fff\ntooltip_bg_color:#355888\ntooltip_fg_color:#fff"
+gtk_color_scheme = "fg_color:#000000\nbg_color:#C7C7C7\nbase_color:#ffffff\ntext_color:#000000\nselected_bg_color:#247EB3\nselected_fg_color:#ffffff\ntooltip_bg_color:#634110\ntooltip_fg_color:#FFFFFF"
+
+style "default"
+{
+
+  GtkButton::default_border = { 0, 0, 0, 0 }
+  GtkButton::child-displacement-x = 0
+  GtkButton::child-displacement-y = 1
+  #GtkWidget::focus-padding = 0
+
+  GtkRange::trough-border = 0
+  GtkRange::slider-width = 15
+  GtkRange::stepper-size = 15
+
+  GtkScrollbar::min_slider_length = 22
+  
+  GtkPaned::handle_size  = 8
+
+  GtkMenuBar::internal-padding  = 0
+  GtkTreeView::vertical-separator = 0
+  GtkTreeView::expander_size     = 6 #15
+  GtkExpander::expander_size     = 6 #17
+  
+  GtkScale::slider-length = 25
+  GtkScale::slider-width  = 17
+  GtkScale::trough-border = 0
+
+  GtkWidget::link-color = "#0062dc" # blue
+  GtkWidget::visited-link-color = "#8c00dc" #purple
+
+  WnckTasklist::fade-overlay-rect = 0
+  WnckTasklist::fade-loop-time = 5.0 # 5 seconds
+  WnckTasklist::fade-opacity = 0.5 # final opacity
+
+  #makes menu only overlap border
+  GtkMenu::horizontal-offset = -1
+
+  #removes extra padding at top and bottom of menus.  Makes menuitem overlap border
+  GtkMenu::vertical-padding = 0
+
+  #set to the same as roundness, used for better hotspot selection of tabs
+  GtkNotebook::tab-curvature = 2.5
+  GtkNotebook::tab-overlap = 4
+
+  GtkMenuItem::arrow-spacing = 10
+  #Spacing between edge with indicator and text
+  GtkOptionMenu  ::indicator-size = {11, 5}
+  #GtkOptionMenu  ::indicator-spacing = {6, 5, 4, 4}
+
+  GtkCheckButton ::indicator-size = 15
+  GtkCheckButton ::indicator-spacing = 1
+  GtkRadioButton ::indicator-size = 15
+
+  GtkTreeView::horizontal_separator = 2
+  GtkTreeView::odd_row_color = mix(0.98, shade (0.93,@base_color), @selected_bg_color)
+
+  xthickness = 1
+  ythickness = 1
+
+  fg[NORMAL]       	=  @fg_color
+  fg[ACTIVE]       	=  @fg_color
+  fg[PRELIGHT]     	=  @fg_color
+  fg[SELECTED]     	=  @selected_fg_color
+  fg[INSENSITIVE]  	=  mix (0.675,shade (0.95,@bg_color),@fg_color)
+
+  bg[NORMAL]       	=  @bg_color
+  bg[ACTIVE]        =  shade (1.0233,@bg_color)
+  bg[PRELIGHT]      =  mix(0.90, shade (1.1,@bg_color), @selected_bg_color)
+  bg[SELECTED]      =  @selected_bg_color
+  bg[INSENSITIVE]  	=  shade (1.03,@bg_color)
+
+  base[NORMAL]     	=  @base_color
+  base[ACTIVE]     	=  shade (0.65,@base_color)
+  base[PRELIGHT]   	=  @base_color
+  base[SELECTED]    =  @selected_bg_color
+  base[INSENSITIVE]	=  shade (1.025,@bg_color)
+
+  text[NORMAL]     	=  @text_color
+  text[ACTIVE]      =  shade (0.95,@base_color)
+  text[PRELIGHT]   	=  @text_color
+  text[SELECTED]   	=  @selected_fg_color
+  text[INSENSITIVE]	=  mix (0.675,shade (0.95,@bg_color),@fg_color)
+
+  engine "aurora" 
+  {
+	  menubarstyle	  = 0 # 0 = flat, 1 = gradient
+	  curvature       = 2.5
+	  arrowsize       = 0 # controls combo_arrow circle size.  Diameter set by (11 + 2 * arrowsize)
+	  old_arrowstyle  = TRUE #set to TRUE for original circled arrows
+	  animation       = TRUE # FALSE = disabled, TRUE = enabled
+  }
+}
+
+style "wide"
+{
+  xthickness = 2
+  ythickness = 2
+}
+
+style "button"
+{
+  xthickness = 3
+  ythickness = 3
+  bg[NORMAL]   =  shade (1.09,@bg_color)
+  bg[ACTIVE]   =  shade (0.85,@bg_color)
+  bg[PRELIGHT] =  mix(0.90, shade (1.13,@bg_color), @selected_bg_color)
+}
+
+style "frame"
+{
+  GtkWidget::draw-border = {1,1,1,1}
+}
+
+style "toolbar"
+{
+  bg[NORMAL] =  shade (1.075,@bg_color) #mix(0.98, shade (1.0475,@bg_color), shade (1.1,@selected_bg_color)) #slightly tinted
+}
+
+style "handlebox"
+{
+  bg[NORMAL] = shade (0.95,@bg_color)
+}
+
+style "scale"
+{
+  bg[NORMAL]   =  shade (0.75,@bg_color)
+  bg[PRELIGHT] =  shade (0.90,@bg_color)
+}
+
+style "range"
+{
+  bg[NORMAL]   =  shade (1.085,@bg_color)
+  bg[ACTIVE]   =  @bg_color
+  bg[PRELIGHT] =  mix(0.90, shade (1.085,@bg_color), @selected_bg_color)
+
+  #Arrows
+  text[NORMAL]      =  shade (0.275,@selected_fg_color) #shade (0.925,@fg_color)
+  text[PRELIGHT]    =  @selected_fg_color
+  text[ACTIVE]      =  shade (0.10,@selected_fg_color)
+  text[INSENSITIVE] =  mix (0.80,shade (0.90,@bg_color),@fg_color)
+}
+
+style "notebook" = "wide"
+{
+  bg[NORMAL] =  shade (1.08,@bg_color)
+  fg[ACTIVE] =  shade (0.30,@bg_color)
+  bg[ACTIVE] =  shade (1.04,@bg_color)
+}
+
+style "paned"
+{
+  bg[PRELIGHT] =  shade (1.1,@bg_color)
+}
+
+style "menu"
+{
+  xthickness = 3
+  ythickness = 3
+  bg[NORMAL] = shade (1.15,@bg_color)
+}
+
+style "menu-item" = "menu"
+{
+  xthickness = 0
+  ythickness = 3
+
+  fg[PRELIGHT] 	 =  @selected_fg_color
+  text[PRELIGHT] =  @selected_fg_color
+}
+
+style "separator-menu-item" {
+  xthickness = 1
+  ythickness = 1
+}
+
+style "tree" = "wide"
+{
+  GtkWidget::focus-padding = 0
+
+  bg[NORMAL]   =  shade (1.15,@bg_color)
+  bg[PRELIGHT] = shade (1.20,@bg_color)
+  bg[ACTIVE]   =  mix(0.85,  shade (1.05,@bg_color), @selected_bg_color)
+}
+
+style "tree-arrow"
+{
+  bg[NORMAL]   =  mix(0.70, shade (0.75,@bg_color), shade (0.80,@selected_bg_color))
+  bg[PRELIGHT] =  mix(0.80, @bg_color, @selected_bg_color)
+}
+
+style "tooltips"
+{
+  xthickness = 4
+  ythickness = 4
+  bg[NORMAL]   =  shade (1.20,@tooltip_bg_color)
+  fg[NORMAL]   =  @tooltip_fg_color
+  text[NORMAL]   =  @tooltip_fg_color
+}
+
+style "progressbar"
+{
+  xthickness = 1
+  ythickness = 1
+  fg[PRELIGHT]  	= @selected_fg_color
+  bg[PRELIGHT]      =  mix(0.90, shade (1.1,@bg_color), "#7d90ab")
+  bg[SELECTED]      =  "#7d90ab"
+  base[SELECTED]    =  "#7d90ab"
+}
+
+style "combo" = "button"
+{ 
+  GtkButton::inner-border = {0,1,0,0}
+}
+
+style "combo-arrow" = "button"
+{
+  xthickness = 1
+  ythickness = 1
+}
+
+style "check-radio-buttons" = "button"
+{
+  GtkWidget::interior-focus = 0
+  GtkWidget::focus-padding = 1
+  text[SELECTED] =  @selected_fg_color
+  text[INSENSITIVE]	=  shade (0.625,@bg_color)
+  base[PRELIGHT] =  mix(0.80, @base_color, @selected_bg_color)
+}
+
+# widget styles
+class "GtkWidget"       style "default"
+class "GtkCheckButton"  style "check-radio-buttons"
+class "GtkButton"       style "button"
+class "GtkScale"        style "scale"
+class "GtkRange"        style "range"
+class "GtkPaned"        style "paned"
+class "GtkFrame"        style "frame"
+class "GtkMenu"         style "menu"
+class "GtkEntry"        style "button"
+class "GtkMenuItem"     style "menu-item"
+class "GtkNotebook"     style "notebook"
+class "GtkProgressBar"  style "progressbar"
+class "GtkToolbar"      style "toolbar"
+class "GtkHandleBox*"   style "handlebox"
+class "GtkSeparator"    style "wide"
+class "GtkArrow"        style "combo-arrow"
+
+# menu stuff
+widget_class "*<GtkSeparatorMenuItem>*" style "separator-menu-item"
+widget_class "*.<GtkMenuItem>.*" style "menu-item"
+widget_class "*.<GtkMenuItem>.*GtkProgressBar" style "progressbar"
+
+# combobox stuff
+widget_class "*.GtkComboBoxEntry*" style "combo"
+widget_class "*.GtkCombo.GtkButton"    style "combo"
+
+# tooltips stuff
+widget "gtk-tooltips*"  style "tooltips"
+widget "gtk-tooltip*"  style "tooltips"
+
+widget_class "*.GtkNotebook.*GtkEventBox" style "notebook"
+widget_class "*.GtkNotebook.*GtkViewport" style "notebook"
+widget_class "*.GtkNotebook.GtkLabel*" style "notebook" #for tabs
+
+# treeview stuff
+widget_class "*.<GtkTreeView>.GtkButton" style "tree"
+widget_class "*.GtkCTree.GtkButton" 	style "tree"
+widget_class "*.GtkList.GtkButton" 	style "tree"
+widget_class "*.GtkCList.GtkButton" 	style "tree"
+widget_class "*.ETree*" 	style "tree" #evolution
+
+#For arrow bg
+widget_class "*.<GtkTreeView>.GtkButton.*GtkArrow" style "tree-arrow"
+widget_class "*.GtkCTree.GtkButton.*GtkArrow" 	style "tree-arrow"
+widget_class "*.GtkList.GtkButton.*GtkArrow" 	style "tree-arrow"
