@@ -75,9 +75,9 @@ set smarttab      " insert tabs on the start of a line according to shiftwidth, 
 autocmd BufWritePre * :%s/\s\+$//e
 
 " Folding
-" set foldmethod=indent
-" nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
-" :set fdl=1
+set foldmethod=syntax
+nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zO')<CR>
+set fdl=1
 
 " =================================================================================================
 " Searching =======================================================================================
