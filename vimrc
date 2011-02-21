@@ -42,8 +42,9 @@ if has("mac")
 elseif has("win32")
   set gfn=Bitstream\ Vera\ Sans\ Mono:h10
 elseif has("unix")
-  set gfn=Monospace\ 11
+  set gfn=Droid\ Sans\ Mono\ 10
 "  set shell=/bin/bash
+  set nocursorline
 endif
 
 if has("gui_running")
@@ -74,9 +75,9 @@ set smarttab      " insert tabs on the start of a line according to shiftwidth, 
 autocmd BufWritePre * :%s/\s\+$//e
 
 " Folding
-set foldmethod=syntax
-nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zO')<CR>
-set fdl=1
+"set foldmethod=syntax
+"nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zO')<CR>
+"set fdl=1
 
 " =================================================================================================
 " Searching =======================================================================================

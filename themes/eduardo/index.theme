@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=eduardo
+Type=X-GNOME-Metatheme
+Comment=
+
+[X-GNOME-Metatheme]
+GtkTheme=Equinox
+MetacityTheme=Ambiance
+IconTheme=Faenza-Dark
+GtkColorScheme=fg_color:#333333,bg_color:#CCCCCC,base_color:#FFFFFF,text_color:#333333,selected_bg_color:#494949,selected_fg_color:#FFFFFF,tooltip_fg_color:#EEEEEE,tooltip_bg_color:#222222
+CursorTheme=DMZ-White
+CursorSize=18
