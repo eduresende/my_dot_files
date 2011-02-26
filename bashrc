@@ -44,6 +44,11 @@ alias rspec='rspec --drb --format doc --color '
 
 # export JAVA_HOME=/cygdrive/c/Arquivos\ de\ programas/Java/jdk1.6.0_16
 
+
+
+
+alias gall='convert -size 250x -contrast -resize 250x snap-00001.jpg snap-00002.jpg snap-00003.jpg snap-00004.jpg +append temp1.jpg && convert -size 250x -contrast -resize 250x snap-00005.jpg snap-00006.jpg snap-00007.jpg snap-00008.jpg +append temp2.jpg && convert -append temp1.jpg temp2.jpg gall.jpg && rm temp1.jpg temp2.jpg && mv gall.jpg destino/ && rm *.jpg'
+
 if [ "$PS1" ] ; then
 mkdir -p -m 0700 /dev/cgroup/cpu/user/$$ > /dev/null 2>&1
 echo $$ > /dev/cgroup/cpu/user/$$/tasks
