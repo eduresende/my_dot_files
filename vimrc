@@ -130,7 +130,7 @@ nmap <silent> :e :tabe
 " =================================================================================================
 
 " CommandT
-nmap <silent> <leader>t :CommandTFlush<CR>:CommandT<CR>
+nmap <silent> <C-t> :CommandTFlush<CR>:CommandT<CR>
 
 " Project
 " nmap <silent> <C-p> :Project<CR>
